@@ -1,11 +1,21 @@
 # github
 Bonzai branch with utilities for github(using gh cli)
 
-# Install
+## Instalation
 
 ```sh
-curl -o github https://github.com/cherryramatisdev/github/blob/main/build/github-darwin-amd64?raw=true
-curl -o github https://github.com/cherryramatisdev/github/blob/main/build/github-darwin-arm64?raw=true
-curl -o github https://github.com/cherryramatisdev/github/blob/main/build/github-linux-amd64?raw=true
-curl -o github https://github.com/cherryramatisdev/github/blob/main/build/github-windows-amd64.exe?raw=true
+curl -L https://github.com/cherryramatisdev/github/releases/download/v0.0.2/github-darwin-amd64 -o ./github
+curl -L https://github.com/cherryramatisdev/github/releases/download/v0.0.2/github-darwin-arm64 -o ./github
+curl -L https://github.com/cherryramatisdev/github/releases/download/v0.0.2/github-linux-amd64 -o ./github
+curl -L https://github.com/cherryramatisdev/github/releases/download/v0.0.2/github-windows-amd64.exe -o ./github
+```
+
+```sh
+chmod +x ./github
+```
+
+For tab completion(only bash):
+
+```sh
+echo 'complete -C github github' > ~/.bashrc
 ```
