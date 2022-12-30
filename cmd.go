@@ -17,7 +17,24 @@ var Cmd = &Z.Cmd{
 	Aliases:     []string{`gh`},
 	Usage:       `[help]`,
 	Description: githubdoc,
-	Commands:    []*Z.Cmd{help.Cmd, prCmd},
+	Commands:    []*Z.Cmd{help.Cmd, prCmd, issueCmd},
+}
+
+//go:embed issue.md
+var issuedoc string
+
+var issueCmd = &Z.Cmd{
+	Name:        `issue`,
+	Description: issuedoc,
+	Commands:    []*Z.Cmd{help.Cmd, listIssueCmd},
+}
+
+var listIssueCmd = &Z.Cmd{
+	Name:        `list`,
+	Description: enhancementdoc,
+	Call: func(x *Z.Cmd, args ...string) error {
+		return Z.Exec("gh", "issue", "list")
+	},
 }
 
 //go:embed pullrequest.md
